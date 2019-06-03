@@ -1,0 +1,25 @@
+{
+  "name": "postgraphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@graphile-contrib/pg-simplify-inflector": "^5.0.0-beta.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "postgraphile": "^4.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "scripts": {
+    "start-db": "docker-compose up -d",
+    "start-graphql": "postgraphile -c \"postgres://postgres:postgres@localhost:5432/todolistdb\"",
+    "start": "node index.js",
+    "postgraphile": "postgraphile"
+  },
+  "author": "Ryan Xiao",
+  "license": "ISC"
+}
