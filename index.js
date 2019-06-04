@@ -11,13 +11,14 @@ app.get('/', (req, res) => res.send('running server'));
 app.use(
   '/lib',
   postgraphile(
-    'postgres://postgres:postgres@localhost:5432/svlibdb',
+    'postgres://postgres:postgres@postgres/svlibdb',
     'public',
     {
       appendPlugins: [PgSimplifyInflectorPlugin],
       graphqlRoute: '/graphql',
       graphiql: true,
       graphiqlRoute: '/graphiql',
+      retryOnInitFail: true,
     },
   ),
 );
